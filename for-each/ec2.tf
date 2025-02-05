@@ -7,7 +7,10 @@ resource "aws_instance" "my_instance" {
     Name    = each.key
     Purpose = "terraform-practice"
   }
+  
 }
+
+
 
 resource "aws_security_group" "allow_tls" {
   name        = "allow_tls"

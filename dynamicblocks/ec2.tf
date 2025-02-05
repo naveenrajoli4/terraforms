@@ -12,7 +12,7 @@ resource "aws_security_group" "allow_tls" {
   name        = "allow_tls"
   description = "Allow TLS inbound traffic and outbound traffic"
 
-  dynamic "ingress" {
+  dynamic "ingress" { # Terraform will give you a keyword with the block name. You can iterate using ingress.
     for_each = var.ingress_port
     content {
     from_port   = ingress.value["from_port"]
